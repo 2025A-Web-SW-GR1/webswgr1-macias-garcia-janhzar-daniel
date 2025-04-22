@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f0f0;
+  }
+  #mensaje {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+<h1>Hola Mundo Interactivo 🌍</h1>
+<button onclick="mostrarMensaje()">Haz clic aquí</button>
+<div id="mensaje"></div>
+
+<script>
+  function mostrarMensaje() {
+    document.getElementById('mensaje').textContent = "¡Hola! Gracias por interactuar 😊";
+  }
+</script>
+</body>
+</html>
