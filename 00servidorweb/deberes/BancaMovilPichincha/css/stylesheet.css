@@ -1,0 +1,260 @@
+.tituloPrincpal {
+    color: rgb(16, 7, 68);         
+    font-size: 24px;           
+    font-family: Arial Black, sans-serif; 
+    font-weight: bolder;       
+    text-align: left;        
+    margin-top: 6px;
+}
+.tituloMenor {
+    color: rgb(16, 7, 68);          
+    font-size: 36px;           
+    font-family: Arial, sans-serif; 
+    text-align: left;        
+    margin-top: 6px;
+}
+.link {
+    color: rgb(41, 14, 191);         
+    font-size: 24px;          
+    font-family: Arial, sans-serif; 
+    text-align: left;       
+    margin-top: 6px;
+    text-decoration: none;
+    white-space: pre;
+}
+.ayuda {
+    color: rgb(16, 7, 68);         
+    font-size: 24px;          
+    font-family: Arial, sans-serif; 
+    text-align: right;       
+    margin-top: 6px;
+    text-decoration: none;
+    white-space: pre;
+}
+.btn-filtro {
+  @apply rounded-pill px-4; 
+  padding: 0.375rem 1.5rem;
+  border-radius: 50rem;
+  font-size: 1rem;
+  border: 1px solid #909296;
+  background-color: rgb(226, 226, 226);
+  color: #000000;
+  transition: 0.3s ease;
+  margin-right: 1rem;
+}
+.btn-filtro:hover {
+  background-color: rgb(16, 7, 68);
+  border: rgb(16, 7, 68) 1px solid;
+  color: white;
+}
+.btn-filtro:first-child {
+  margin-left: 0 !important;
+}
+
+
+.account-btn {
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 450px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    white-space: normal;
+    flex-shrink: 0;
+}
+.account-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+}
+        
+.account-btn:active {
+  transform: translateY(1px);
+}
+        
+.account-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+        
+.account-number-masked {
+  color: #000000;
+  letter-spacing: 1px;
+}
+        
+.balance {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+        
+.favorite {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    font-family: Arial, sans-serif;
+    top: 10px; 
+    right: 10px; 
+    font-size: 20px; 
+}
+        
+.account-type {
+   font-size: 14px;
+   color: #555;
+   margin-top: 10px;
+}
+        
+.account-label {
+   font-size: 12px;
+   color: #000000;
+   text-transform: uppercase;
+   margin-bottom: 5px;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.division {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+.div1 {
+  height: 80px;
+  background-color: #ffffff;
+}
+
+.div2 {
+  height: 150px;
+  background-color: #e7f5ff;
+}
+
+.div3 {
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row; 
+  padding: 0;
+  align-items: flex-start;
+}
+
+.div4 {
+  height: 100px;
+  background-color: #ffffff;
+  justify-content: left;
+  margin-left: 0px;
+}
+
+.div5 {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block;
+    padding: 15px;
+    scroll-behavior: smooth; 
+    direction: ltr;          
+}
+
+
+.div5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, white);
+    pointer-events: none;
+}
+
+.div6 {
+  height: 40px;
+  margin: 10px;
+  background-color: #ffffff;
+  justify-content: left;
+}
+.div7 {
+    min-height: 100vh; 
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;     
+    padding: 40px; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 800px; 
+}
+
+.grid-btn {
+    width: 140px;
+    height: 140px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    text-align: left;
+}
+
+.grid-btn:hover {
+    transform: scale(1.05);
+}
+
+.grid-btn img {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.grid-btn span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-align: left;
+  display: block;
+}
+
+.col.left {
+  display: flex;
+  flex-direction: row;        
+  align-items: center;        
+  justify-content: flex-start;
+}
+
+.col.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; 
+}
