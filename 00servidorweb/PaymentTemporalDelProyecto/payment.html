@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago con Stripe</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    .StripeElement {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Pagar con tarjeta</h2>
+    <form id="payment-form">
+      <div id="card-element"></div>
+      <button id="submit">Pagar</button>
+      <div id="payment-message" class="hidden"></div>
+    </form>
+  </div>
+
+  <script>
+    // ⚠️ Reemplaza esto con el clientSecret que obtuviste desde el backend
+    const clientSecret = "pi_3RS7UiI7qYbufIDl0eLf9dBF_secret_rl7QROZAwLetRRnRki3kVclZB"; // <-- lo que te devolvió el backend
+
+    // Inicializar Stripe con tu clave pública
+    const stripe = Stripe("pk_test_51RR0k8I7qYbufIDlGMMN4jnlbqgTcSyT0ZPfiL1EKkEmnvpUPXjY1hhGIzZD0MoSRKQzOLdqVAfy75sfpuT7A0y100k63UhYka"); // ⚠️ TU CLAVE PÚBLICA (no la secreta)
+
+    const elements = stripe.elements();
+    const cardElement = elements.create("card");
+    cardElement.mount("#card-element");
+
+    const form = document.getElementById("payment-form");
+    const messageDiv = document.getElementById("payment-message");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: cardElement,
+        }
+      });
+
+      if (error) {
+        messageDiv.textContent = "Error: " + error.message;
+        messageDiv.classList.remove("hidden");
+      } else if (paymentIntent.status === 'succeeded') {
+        messageDiv.textContent = "✅ Pago exitoso!";
+        messageDiv.classList.remove("hidden");
+      }
+    });
+  </script>
+</body>
+</html>
