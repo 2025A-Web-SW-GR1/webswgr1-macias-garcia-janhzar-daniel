@@ -8,4 +8,4 @@ nombre = 1;
 
 //Inmutables (Constantes)
 const cedula = "12345678";
-cedula = "1";
+cedula= "1";

@@ -30,20 +30,13 @@ export class AppController {
   @Get('/casa')
   getCasa(@Query('idCasa') idCasa?: string) {
     if (!idCasa) {
-      // No se envió idCasa, devolvemos todas las casas
       return this.casas;
     }
-
-    // Convertir idCasa a número para comparar
     const id = Number(idCasa);
     const casa = this.casas.find(c => c.id === id);
-
     if (!casa) {
-      // No encontró la casa, lanzamos 404
       throw new HttpException('No se encuentra', HttpStatus.NOT_FOUND);
     }
-
-    // Retornamos la casa encontrada dentro de un array
     return [casa];
   }
 
